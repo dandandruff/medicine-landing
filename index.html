@@ -1,17 +1,156 @@
 <!doctype html>
 <html lang="ko">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="SNS에서 본 의약품, 가까운 약국에서 찾아보세요. 약국 검색 웹사이트 약어디."><title>약어디 — 찾던 약, 가까운 곳에</title><link rel="stylesheet" href="styles.css"><script src="script.js" defer></script></head>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="SNS에서 본 의약품, 가까운 약국에서 찾아보세요. 약국 검색 웹사이트 약어디.">
+    <title>약어디 — 찾던 약, 가까운</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
 <body>
-<header class="header wrap"><a class="brand" href="#" aria-label="약어디 홈"><span class="logo">✚</span> 약어디<span class="brand-dot">.</span></a><nav aria-label="주 메뉴"><a href="#search">약국 찾기</a><a href="#campaigns">의약품 둘러보기</a><a class="nav-business" href="#partners">브랜드·파트너 안내 <span>↗</span></a></nav></header>
-<main>
-<section class="hero wrap"><div class="hero-copy"><div class="eyebrow"><span></span> SNS에서 본 그 약, 어디서 살까?</div><h1>찾던 약,<br>생각보다 <em>가까이.</em></h1><p>궁금했던 의약품을 검색하고<br>내 주변 약국을 한 번에 찾아보세요.</p><a class="hero-link" href="#search">지금 내 주변에서 찾기 <span>↘</span></a><div class="web-note"><span>◎</span> 설치 없이, 웹에서 바로</div></div>
-<div class="map-art" aria-label="주변 약국 찾기 서비스 일러스트"><div class="map-grid"></div><div class="park park-one"></div><div class="park park-two"></div><div class="road road-one"></div><div class="road road-two"></div><div class="road road-three"></div><span class="map-label label-one">우리 동네</span><span class="map-label label-two">가까운 일상</span><div class="radius radius-one"></div><div class="radius radius-two"></div><div class="location-dot"></div><div class="pin pin-one">✚</div><div class="pin pin-two">✚</div><div class="pin pin-three">✚</div><div class="map-callout"><span class="callout-icon">✚</span><div><small>찾던 의약품을</small><strong>가까운 약국에서</strong></div><span class="callout-arrow">↗</span></div><span class="map-caption">서비스 이용 화면 예시</span><div class="floating-label">검색부터 약국까지 <b>한 걸음 더 가까이</b></div></div></section>
-<section id="search" class="search-section wrap"><form id="search-form" class="search-box"><div class="field"><label for="medicine"><span>01</span> 찾는 의약품</label><div class="input-line"><span aria-hidden="true">⌕</span><input id="medicine" name="medicine" placeholder="의약품 이름을 입력하세요" required maxlength="80" list="medicines" autocomplete="off"><datalist id="medicines"><option value="판콜에스내복액"><option value="후시딘연고"><option value="활명수"></datalist></div></div><div class="field region-field"><label for="region"><span>02</span> 주변 약국 검색</label><div class="input-line"><span aria-hidden="true">◎</span><input id="region" name="region" placeholder="동네, 역 이름으로 검색" required maxlength="80" autocomplete="off"></div></div><button class="search-button" type="submit">약국 찾기 <span>↗</span></button></form><div class="search-bottom"><div class="quick"><span>빠른 검색</span><button type="button" data-medicine="판콜에스내복액">판콜에스</button><button type="button" data-medicine="후시딘연고">후시딘</button><button type="button" data-medicine="활명수">활명수</button></div><span>방문 전 약국에 판매 여부를 확인해 주세요.</span></div><div id="results" class="results" hidden aria-live="polite"><div><span class="section-kicker">SEARCH RESULT</span><h2 id="result-title"></h2><p>판매처·실시간 재고 데이터가 아직 연결되지 않았습니다.<br>지도에서 주변 약국을 확인하고, 방문 전 해당 의약품의 판매 여부를 문의해 주세요.</p></div><a id="map-link" class="outline-button" target="_blank" rel="noopener noreferrer">네이버 지도에서 약국 찾기 ↗</a></div></section>
-<section id="campaigns" class="campaigns wrap"><div class="section-head"><div><span class="section-kicker">MEET YOUR MEDICINE</span><h2>피드에서 봤던, 그 의약품.</h2><p>광고 속 제품을 살펴보고 가까운 약국을 찾아보세요.</p></div><span class="ad-note">제조사 공식 광고 모음</span></div><div class="ad-grid">
-<article class="ad-card"><a class="ad-image ad-red" href="https://m.dong-wha.co.kr/PRcenter/tv_list.asp?s_code=&s_year=&t_page=5" target="_blank" rel="noopener noreferrer" aria-label="판콜 공식 광고 갤러리 보기"><span class="image-fallback">PANCOLD<br><b>판콜</b></span><img src="https://www.dong-wha.co.kr/mediaCenter/adGallery/cm_tv/t_pancold_202109.jpg" alt="판콜 제조사 공식 광고 썸네일" loading="lazy"><span class="ad-badge">공식 광고 · 2021</span><span class="play">↗</span></a><div class="ad-content"><span class="product-maker">동화약품 · 일반의약품</span><h3>판콜</h3><p>감기시작했다 판콜마셨다 (리뉴얼)</p><button data-medicine="판콜에스내복액">판콜에스 약국 찾기 <span>↗</span></button></div></article>
-<article class="ad-card"><a class="ad-image ad-yellow" href="https://m.dong-wha.co.kr/PRcenter/tv_list.asp?s_code=&s_year=&t_page=5" target="_blank" rel="noopener noreferrer" aria-label="후시딘 공식 광고 갤러리 보기"><span class="image-fallback">FUCIDIN<br><b>후시딘</b></span><img src="https://www.dong-wha.co.kr/mediaCenter/adGallery/cm_tv/t_fucidin_202105B.jpg" alt="후시딘 제조사 공식 광고 썸네일" loading="lazy"><span class="ad-badge">공식 광고 · 2021</span><span class="play">↗</span></a><div class="ad-content"><span class="product-maker">동화약품 · 일반의약품</span><h3>후시딘</h3><p>상처 지지않아 애니메이션 편</p><button data-medicine="후시딘연고">후시딘 약국 찾기 <span>↗</span></button></div></article>
-<article class="ad-card"><a class="ad-image ad-green" href="https://m.dong-wha.co.kr/PRcenter/tv_list.asp?s_code=&s_year=&t_page=5" target="_blank" rel="noopener noreferrer" aria-label="활명수 공식 광고 갤러리 보기"><span class="image-fallback">WHAL MYUNG SU<br><b>활명수</b></span><img src="https://www.dong-wha.co.kr/mediaCenter/adGallery/cm_tv/t_whal_202102.jpg" alt="활명수 제조사 공식 광고 썸네일" loading="lazy"><span class="ad-badge">공식 광고 · 2021</span><span class="play">↗</span></a><div class="ad-content"><span class="product-maker">동화약품 · 일반의약품</span><h3>활명수</h3><p>124년의 만찬 편 30초</p><button data-medicine="활명수">활명수 약국 찾기 <span>↗</span></button></div></article>
-</div><p class="medicine-note">광고 이미지와 상표의 권리는 각 권리자에게 있습니다. 공식 광고 갤러리를 연결한 예시이며, 제휴를 의미하지 않습니다. 의약품은 설명서를 읽고 약사와 상의하여 사용하세요.</p></section>
-<section id="partners" class="partner wrap"><div class="partner-copy"><span class="section-kicker">FOR BRANDS & CREATORS</span><h2>좋아요, 그다음의<br>관심을 확인하세요.</h2><p>SNS 콘텐츠에서 의약품 검색까지.<br>캠페인별 유입과 약국 검색 행동을 연결합니다.</p><button id="metrics-toggle" class="partner-button" aria-expanded="false" aria-controls="metrics">검색 성과 예시 보기 <span>↗</span></button></div><div class="journey"><div><span class="step-icon">↗</span><small>STEP 01</small><strong>SNS 광고 유입</strong><p>콘텐츠의 링크로 방문</p></div><span class="journey-arrow">→</span><div><span class="step-icon">⌕</span><small>STEP 02</small><strong>의약품 검색</strong><p>실제 관심을 행동으로</p></div><span class="journey-arrow">→</span><div><span class="step-icon">✚</span><small>STEP 03</small><strong>주변 약국 탐색</strong><p>지도에서 약국 확인</p></div></div><div id="metrics" class="metrics" hidden><p><b>현재 탭의 동작 예시</b> · 새로고침하면 초기화됩니다. 실제 방문자 집계·구매 전환 측정은 서버 연결이 필요합니다.</p><div class="metric-grid"><span>광고 선택 <b id="ad-count">0</b></span><span>약국 검색 <b id="search-count">0</b></span><span>지도 클릭 <b id="map-count">0</b></span></div><p id="attribution"></p><small>이 예시는 횟수만 메모리에 기록하며, 검색어·위치·개인정보를 저장하거나 전송하지 않습니다.</small></div></section>
-</main><footer class="wrap"><a class="brand" href="#"><span class="logo">✚</span> 약어디<span class="brand-dot">.</span></a><p>찾는 약과 가까운 약국을 연결합니다.</p><span>© 2026 약어디. 웹사이트 시안</span></footer>
-</body></html>
+    <header class="header wrap"><a class="brand" href="#" aria-label="약어디 홈"><span class="logo">✚</span> 약어디<span
+                class="brand-dot">.</span></a>
+        <nav aria-label="주 메뉴"><a href="#search">약국 찾기</a><a href="#campaigns">의약품 둘러보기</a><a class="nav-business"
+                href="#partners">브랜드·파트너 안내 <span>↗</span></a></nav>
+    </header>
+    <main>
+        <section class="hero wrap">
+            <div class="hero-copy">
+                <div class="eyebrow"><span></span> SNS에서 본 그 약, 어디서 살까?</div>
+                <h1>찾던 약,<br>생각보다 <em>가까이.</em></h1>
+                <p>궁금했던 의약품을 검색하고<br>내 주변 약국을 한 번에 찾아보세요.</p><a class="hero-link" href="#search">지금 내 주변에서 찾기
+                    <span>↘</span></a>
+                <div class="web-note"><span>◎</span> 설치 없이, 웹에서 바로</div>
+            </div>
+            <div class="map-art" aria-label="주변 약국 찾기 서비스 일러스트">
+                <div class="map-grid"></div>
+                <div class="park park-one"></div>
+                <div class="park park-two"></div>
+                <div class="road road-one"></div>
+                <div class="road road-two"></div>
+                <div class="road road-three"></div><span class="map-label label-one">우리 동네</span><span
+                    class="map-label label-two">가까운 일상</span>
+                <div class="radius radius-one"></div>
+                <div class="radius radius-two"></div>
+                <div class="location-dot"></div>
+                <div class="pin pin-one">✚</div>
+                <div class="pin pin-two">✚</div>
+                <div class="pin pin-three">✚</div>
+                <div class="map-callout"><span class="callout-icon">✚</span>
+                    <div><small>찾던 의약품을</small><strong>가까운 약국에서</strong></div><span class="callout-arrow">↗</span>
+                </div><span class="map-caption">서비스 이용 화면 예시</span>
+                <div class="floating-label">검색부터 약국까지 <b>한 걸음 더 가까이</b></div>
+            </div>
+        </section>
+        <section id="search" class="search-section wrap">
+            <form id="search-form" class="search-box">
+                <div class="field"><label for="medicine"><span>01</span> 찾는 의약품</label>
+                    <div class="input-line"><span aria-hidden="true">⌕</span><input id="medicine" name="medicine"
+                            placeholder="의약품 이름을 입력하세요" required maxlength="80" list="medicines"
+                            autocomplete="off"><datalist id="medicines">
+                            <option value="판콜에스내복액">
+                            <option value="후시딘연고">
+                            <option value="활명수">
+                        </datalist></div>
+                </div>
+                <div class="field region-field"><label for="region"><span>02</span> 주변 약국 검색</label>
+                    <div class="input-line"><span aria-hidden="true">◎</span><input id="region" name="region"
+                            placeholder="동네, 역 이름으로 검색" required maxlength="80" autocomplete="off"></div>
+                </div><button class="search-button" type="submit">약국 찾기 <span>↗</span></button>
+            </form>
+            <div class="search-bottom">
+                <div class="quick"><span>빠른 검색</span><button type="button" data-medicine="판콜에스내복액">판콜에스</button><button
+                        type="button" data-medicine="후시딘연고">후시딘</button><button type="button"
+                        data-medicine="활명수">활명수</button></div><span>방문 전 약국에 판매 여부를 확인해 주세요.</span>
+            </div>
+            <div id="results" class="results" hidden aria-live="polite">
+                <div><span class="section-kicker">SEARCH RESULT</span>
+                    <h2 id="result-title"></h2>
+                    <p>판매처·실시간 재고 데이터가 아직 연결되지 않았습니다.<br>지도에서 주변 약국을 확인하고, 방문 전 해당 의약품의 판매 여부를 문의해 주세요.</p>
+                </div><a id="map-link" class="outline-button" target="_blank" rel="noopener noreferrer">네이버 지도에서 약국 찾기
+                    ↗</a>
+            </div>
+        </section>
+        <section id="campaigns" class="campaigns wrap">
+            <div class="section-head">
+                <div><span class="section-kicker">MEET YOUR MEDICINE</span>
+                    <h2>피드에서 봤던, 그 의약품.</h2>
+                    <p>광고 속 제품을 살펴보고 가까운 약국을 찾아보세요.</p>
+                </div><span class="ad-note">제조사 공식 광고 모음</span>
+            </div>
+            <div class="ad-grid">
+                <article class="ad-card"><a class="ad-image ad-red"
+                        href="https://m.dong-wha.co.kr/PRcenter/tv_list.asp?s_code=&s_year=&t_page=5" target="_blank"
+                        rel="noopener noreferrer" aria-label="판콜 공식 광고 갤러리 보기"><span
+                            class="image-fallback">PANCOLD<br><b>판콜</b></span><img
+                            src="https://www.dong-wha.co.kr/mediaCenter/adGallery/cm_tv/t_pancold_202109.jpg"
+                            alt="판콜 제조사 공식 광고 썸네일" loading="lazy"><span class="ad-badge">공식 광고 · 2021</span><span
+                            class="play">↗</span></a>
+                    <div class="ad-content"><span class="product-maker">동화약품 · 일반의약품</span>
+                        <h3>판콜</h3>
+                        <p>감기시작했다 판콜마셨다 (리뉴얼)</p><button data-medicine="판콜에스내복액">판콜에스 약국 찾기 <span>↗</span></button>
+                    </div>
+                </article>
+                <article class="ad-card"><a class="ad-image ad-yellow"
+                        href="https://m.dong-wha.co.kr/PRcenter/tv_list.asp?s_code=&s_year=&t_page=5" target="_blank"
+                        rel="noopener noreferrer" aria-label="후시딘 공식 광고 갤러리 보기"><span
+                            class="image-fallback">FUCIDIN<br><b>후시딘</b></span><img
+                            src="https://www.dong-wha.co.kr/mediaCenter/adGallery/cm_tv/t_fucidin_202105B.jpg"
+                            alt="후시딘 제조사 공식 광고 썸네일" loading="lazy"><span class="ad-badge">공식 광고 · 2021</span><span
+                            class="play">↗</span></a>
+                    <div class="ad-content"><span class="product-maker">동화약품 · 일반의약품</span>
+                        <h3>후시딘</h3>
+                        <p>상처 지지않아 애니메이션 편</p><button data-medicine="후시딘연고">후시딘 약국 찾기 <span>↗</span></button>
+                    </div>
+                </article>
+                <article class="ad-card"><a class="ad-image ad-green"
+                        href="https://m.dong-wha.co.kr/PRcenter/tv_list.asp?s_code=&s_year=&t_page=5" target="_blank"
+                        rel="noopener noreferrer" aria-label="활명수 공식 광고 갤러리 보기"><span class="image-fallback">WHAL MYUNG
+                            SU<br><b>활명수</b></span><img
+                            src="https://www.dong-wha.co.kr/mediaCenter/adGallery/cm_tv/t_whal_202102.jpg"
+                            alt="활명수 제조사 공식 광고 썸네일" loading="lazy"><span class="ad-badge">공식 광고 · 2021</span><span
+                            class="play">↗</span></a>
+                    <div class="ad-content"><span class="product-maker">동화약품 · 일반의약품</span>
+                        <h3>활명수</h3>
+                        <p>124년의 만찬 편 30초</p><button data-medicine="활명수">활명수 약국 찾기 <span>↗</span></button>
+                    </div>
+                </article>
+            </div>
+            <p class="medicine-note">광고 이미지와 상표의 권리는 각 권리자에게 있습니다. 공식 광고 갤러리를 연결한 예시이며, 제휴를 의미하지 않습니다. 의약품은 설명서를 읽고 약사와
+                상의하여 사용하세요.</p>
+        </section>
+        <section id="partners" class="partner wrap">
+            <div class="partner-copy"><span class="section-kicker">FOR BRANDS & CREATORS</span>
+                <h2>좋아요, 그다음의<br>관심을 확인하세요.</h2>
+                <p>SNS 콘텐츠에서 의약품 검색까지.<br>캠페인별 유입과 약국 검색 행동을 연결합니다.</p><button id="metrics-toggle"
+                    class="partner-button" aria-expanded="false" aria-controls="metrics">검색 성과 예시 보기
+                    <span>↗</span></button>
+            </div>
+            <div class="journey">
+                <div><span class="step-icon">↗</span><small>STEP 01</small><strong>SNS 광고 유입</strong>
+                    <p>콘텐츠의 링크로 방문</p>
+                </div><span class="journey-arrow">→</span>
+                <div><span class="step-icon">⌕</span><small>STEP 02</small><strong>의약품 검색</strong>
+                    <p>실제 관심을 행동으로</p>
+                </div><span class="journey-arrow">→</span>
+                <div><span class="step-icon">✚</span><small>STEP 03</small><strong>주변 약국 탐색</strong>
+                    <p>지도에서 약국 확인</p>
+                </div>
+            </div>
+            <div id="metrics" class="metrics" hidden>
+                <p><b>현재 탭의 동작 예시</b> · 새로고침하면 초기화됩니다. 실제 방문자 집계·구매 전환 측정은 서버 연결이 필요합니다.</p>
+                <div class="metric-grid"><span>광고 선택 <b id="ad-count">0</b></span><span>약국 검색 <b
+                            id="search-count">0</b></span><span>지도 클릭 <b id="map-count">0</b></span></div>
+                <p id="attribution"></p><small>이 예시는 횟수만 메모리에 기록하며, 검색어·위치·개인정보를 저장하거나 전송하지 않습니다.</small>
+            </div>
+        </section>
+    </main>
+    <footer class="wrap"><a class="brand" href="#"><span class="logo">✚</span> 약어디<span class="brand-dot">.</span></a>
+        <p>찾는 약과 가까운 약국을 연결합니다.</p><span>© 2026 약어디. 웹사이트 시안</span>
+    </footer>
+</body>
+
+</html>
